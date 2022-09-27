@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Шаблон версии 1</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+
+<main>
+    <section class="map">
+        <div class="container">
+            <div class="two-gis" id="map"></div>
+            <a href="https://2gis.kg/bishkek/geo/15763234351025887/74.579116%2C42.872737?m=74.579523%2C42.872856%2F19.16" target="_blank">Открыть в приложении</a>
+        </div>
+    </section>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11697.164363479633!2d74.58146585!3d42.8666998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec939895105af%3A0xa0c30963fe900816!2z0JDQvdCw0YAg0KfQsNC50LrQsNC90LA!5e0!3m2!1sru!2skg!4v1664290338642!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</main>
+<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+<script type="text/javascript">
+    var map;
+
+    DG.then(function () {
+        map = DG.map('map', {
+            center: [42.872737, 74.579116],
+            zoom: 16
+        });
+        DG.marker([42.872737, 74.579116]).addTo(map).bindPopup("I'm there!!!")
+    });
+</script>
+
+</body>
+</html>
